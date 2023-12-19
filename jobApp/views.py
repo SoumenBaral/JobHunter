@@ -1,7 +1,13 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,HttpResponseNotFound
 def home (request):
-    return  HttpResponse('I am from HttpResponse and This is home ')
+    temp = tempClass
+    is_authentication = False
+    context = {'data':jobTitle,'temp': temp,'is_authentication': is_authentication}
+    return  render(request,'hello.html',context)
+
+class tempClass :
+    x = 6
 
 jobTitle = [
     'Frontend Developer',
