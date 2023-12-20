@@ -11,7 +11,7 @@
     <h4>Available Post : {{temp.x}}</h4>
     {% endif %}
     {% for i in data  %}
-     <p>Possition:  {{i}}</p>
+     <p>Possition:  <a href="{% url "jobDetail" forloop.counter0%}"> {{i}}</a> </p>
     {% endfor %}
 
 </body>
