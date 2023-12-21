@@ -10,8 +10,8 @@
     {% if is_authentication %}
     <h4>Available Post : {{temp.x}}</h4>
     {% endif %}
-    {% for i in data  %}
-     <p>Possition:  <a href="{% url "jobDetail" forloop.counter0%}"> {{i}}</a> </p>
+    {% for i in context  %}
+     <p>Possition:  <a href="{% url "jobDetail" forloop.counter%}"> {{i}}</a> </p>
     {% endfor %}
 
 </body>

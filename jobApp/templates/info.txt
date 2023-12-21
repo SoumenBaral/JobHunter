@@ -2,26 +2,26 @@ Here jobPost is a models of an App
 
 1.get all the data from the tabe:
 
-== > jobPost.objects.all()
+==<> jobPost.objects.all()
 
 2. get the value of Spacific fild's value
 
-==> jobPost.objects.filter(description = 'example')
+==<> jobPost.objects.filter(description = 'example')
 
 if filteris object is not in table the filer reurn an empty arry or list.
 if it's empty is feltering () then it will be behalf like all()
 
-=>jobPost.objects.all() 
+==<> jobPost.objects.all() 
 
 3. Create a row of a table 
 
-==> jobPost.objects.create(title= 'Class Base view job', description='example',salary = 1000) 
+==<>jobPost.objects.create(title= 'Class Base view job', description='example',salary = 1000) 
 
 
 4. get is same as filter but get will give only one value form the table if we want to get the value 
 the table but this table has it's duplicate value the it will show an error 
 
-==> jobPost.objects.get(description='example')
+==<> jobPost.objects.get(description='example')
 
 if getting elemnet is not in the table the it rise an error that is :
 raise self.model.DoesNotExist(
@@ -32,7 +32,7 @@ if we don't give any paramerter in the get function the it will though an error 
 
 5. exclude  menas we need all the elemnet except it 
 
-==> jobPost.objects.exclude(salary =4340)
+==<> jobPost.objects.exclude(salary =4340)
 
 same as filter in another thinks 
 
@@ -48,4 +48,25 @@ same as filter in another thinks
 
 =-<> jobPost.objects.filter(salary__gt = 100) 
 =-<> jobPost.objects.filter(title__exact = 'Django devloper')
+
+8. Update the data :
+
+=<> jobpost1 = jobPost.objects.all()[0]
+
+=<> jobpost1.title = 'ami to vala na '
+
+=<> jobpost1.save()
+
+9. run multple  query :
+
+=<> jobPost.objects.filter().exclude(salary = 5000)
+
+=<> jobPost.objects.filter().exclude(salary = 5000).filter(title__contains='view')
+
+10. contains we can use it for search :
+
+=<> jobPost.objects.filter(title__contains='vala')
+
+
+
 
