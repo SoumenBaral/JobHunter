@@ -9,7 +9,7 @@ Here jobPost is a models of an App
 ==> jobPost.objects.filter(description = 'example')
 
 if filteris object is not in table the filer reurn an empty arry or list.
-if it's empty is feltering () then it will be behalf like 
+if it's empty is feltering () then it will be behalf like all()
 
 =>jobPost.objects.all() 
 
@@ -27,5 +27,20 @@ if getting elemnet is not in the table the it rise an error that is :
 raise self.model.DoesNotExist(
 jobApp.models.jobPost.DoesNotExist: jobPost matching query does not exist.
 )
+
+if we don't give any paramerter in the get function the it will though an error that is duplicate value found
+
+5. exclude  menas we need all the elemnet except it 
+
+==> jobPost.objects.exclude(salary =4340)
+
+same as filter in another thinks 
+
+6. Sorting .... 
+
+=-<>  jobPost.objects.order_by('title') sort by title in assinding order
+=-<> jobPost.objects.order_by('-salary') dessinding order 
+=-<> jobPost.objects.order_by('salary','title') add multple query to get sort
+=-<> jobPost.objects.order_by('?') random Sort 
 
 
