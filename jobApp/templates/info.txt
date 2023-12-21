@@ -1,0 +1,31 @@
+Here jobPost is a models of an App
+
+1.get all the data from the tabe:
+
+== > jobPost.objects.all()
+
+2. get the value of Spacific fild's value
+
+==> jobPost.objects.filter(description = 'example')
+
+if filteris object is not in table the filer reurn an empty arry or list.
+if it's empty is feltering () then it will be behalf like 
+
+=>jobPost.objects.all() 
+
+3. Create a row of a table 
+
+==> jobPost.objects.create(title= 'Class Base view job', description='example',salary = 1000) 
+
+
+4. get is same as filter but get will give only one value form the table if we want to get the value 
+the table but this table has it's duplicate value the it will show an error 
+
+==> jobPost.objects.get(description='example')
+
+if getting elemnet is not in the table the it rise an error that is :
+raise self.model.DoesNotExist(
+jobApp.models.jobPost.DoesNotExist: jobPost matching query does not exist.
+)
+
+
