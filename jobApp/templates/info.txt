@@ -44,3 +44,8 @@ same as filter in another thinks
 =-<> jobPost.objects.order_by('?') random Sort 
 
 
+7. condition in filter
+
+=-<> jobPost.objects.filter(salary__gt = 100) 
+=-<> jobPost.objects.filter(title__exact = 'Django devloper')
+
