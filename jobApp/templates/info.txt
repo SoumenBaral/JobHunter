@@ -82,3 +82,11 @@ Avarage salary of first 3 person
 =<> jobPost.objects.filter(id__lte=3).aggregate(Avg('salary'))
 
 
+Delete a Job Post ..........?
+
+=<> j = jobPost(title= 'test job post',description ='this is for test ' ,salary = 3000)
+=<> j.save()
+=<> testJob = jobPost.objects.get(title ='test job post')
+=<> testJob.delete()
+=<> alljobtest = jobPost.objects.filter(title__icontains= 'test')
+=<> alljobtest.delete() ------> (2, {'jobApp.jobPost': 2})
