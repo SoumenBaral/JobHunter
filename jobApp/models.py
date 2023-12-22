@@ -8,11 +8,18 @@ class Location(models.Model):
     state = models.CharField(max_length =200)
     country = models.CharField(max_length =200)
     zip = models.CharField(max_length =200)
+    def __str__(self):
+        return self.country
+    
+class skills(models.Model):
+    name = models.CharField(max_length =200)
 
 class Author(models.Model):
     name = models.CharField(max_length =200)
     company = models.CharField(max_length =200)
     designation = models.CharField(max_length =200)
+    def __str__(self) -> str:
+        return self.name
 
 class jobPost(models.Model):
     title = models.CharField(max_length= 200)
@@ -22,7 +29,8 @@ class jobPost(models.Model):
     salary = models.IntegerField()
     slug = models.SlugField(null=True,max_length= 40,unique = True)
     location = models.OneToOneField(Location,null = True ,on_delete = models.CASCADE)
-    author = models.ForeignKey(Author,on_delete = models.CASCADE)
+    author = models.ForeignKey(Author,on_delete = models.CASCADE ,null = True )
+    skill = models.ManyToManyField(skills)
 
     def save(self, *args, **kwargs):
         # if not self.id:
