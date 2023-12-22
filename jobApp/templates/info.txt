@@ -93,3 +93,12 @@ Delete a Job Post ..........?
 =<> testJob.delete()
 =<> alljobtest = jobPost.objects.filter(title__icontains= 'test')
 =<> alljobtest.delete() ------> (2, {'jobApp.jobPost': 2})
+
+------------------------------------------------------------------------------------------------
+dataBase Relatonship 
+
+One to One ===<>  Persion and Passport 
+
+One to many ===<> Customer and order
+
+Many to Many ===<> Customer and Product
