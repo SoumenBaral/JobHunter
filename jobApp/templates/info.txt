@@ -68,5 +68,17 @@ same as filter in another thinks
 =<> jobPost.objects.filter(title__contains='vala')
 
 
+11.Aggregate ....
+
+=<> jobPost.objects.count()
+=<> jobPost.objects.filter(title__contains='React').count()
+from django.db.models import Avg
+=<> jobPost.objects.aggregate(Avg('salary'))
+=<> jobPost.objects.aggregate(Max('salary'))
+=<>  jobPost.objects.aggregate(different_sal=Max('salary')-Avg('salary'))
+
+Avarage salary of first 3 person 
+
+=<> jobPost.objects.filter(id__lte=3).aggregate(Avg('salary'))
 
 
