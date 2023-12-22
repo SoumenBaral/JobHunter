@@ -26,4 +26,8 @@ class jobAdmin(admin.ModelAdmin):
     )
 #    'wide' 
 
-admin.site.register(models.jobPost,jobAdmin)
+admin.site.register(models.jobPost)
+admin.site.register(models.Author)
+admin.site.register(models.Location)
+admin.site.register(models.skills)
+

@@ -9,7 +9,7 @@ class Location(models.Model):
     country = models.CharField(max_length =200)
     zip = models.CharField(max_length =200)
     def __str__(self):
-        return self.country
+        return self.street
     
 class skills(models.Model):
     name = models.CharField(max_length =200)
