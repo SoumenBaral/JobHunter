@@ -4,12 +4,12 @@ Here jobPost is a models of an App
 
 ==<> jobPost.objects.all()
 
-2. get the value of Spacific fild's value
+2. get the value of Spacific field's value
 
 ==<> jobPost.objects.filter(description = 'example')
 
-if filteris object is not in table the filer reurn an empty arry or list.
-if it's empty is feltering () then it will be behalf like all()
+if filteris object is not in table the filter return an empty array or list.
+if it's empty is filtering () then it will be  like all() function
 
 ==<> jobPost.objects.all() 
 
@@ -17,13 +17,16 @@ if it's empty is feltering () then it will be behalf like all()
 
 ==<>jobPost.objects.create(title= 'Class Base view job', description='example',salary = 1000) 
 
+OR
+=<> j = jobPost(title= 'test job post',description ='this is for test ' ,salary = 3000)
+=<> j.save()
 
 4. get is same as filter but get will give only one value form the table if we want to get the value 
 the table but this table has it's duplicate value the it will show an error 
 
-==<> jobPost.objects.get(description='example')
+==<> jobPost.objects.get(description='example')->take a value at a time 
 
-if getting elemnet is not in the table the it rise an error that is :
+if getting elemnet is not in the table then it rise an error that is :
 raise self.model.DoesNotExist(
 jobApp.models.jobPost.DoesNotExist: jobPost matching query does not exist.
 )
@@ -38,7 +41,7 @@ same as filter in another thinks
 
 6. Sorting .... 
 
-=-<>  jobPost.objects.order_by('title') sort by title in assinding order
+=-<> jobPost.objects.order_by('title') sort by title in assinding order
 =-<> jobPost.objects.order_by('-salary') dessinding order 
 =-<> jobPost.objects.order_by('salary','title') add multple query to get sort
 =-<> jobPost.objects.order_by('?') random Sort 
@@ -46,8 +49,8 @@ same as filter in another thinks
 
 7. condition in filter
 
-=-<> jobPost.objects.filter(salary__gt = 100) 
-=-<> jobPost.objects.filter(title__exact = 'Django devloper')
+=-<> jobPost.objects.filter(salary__gt = 100) -->(grater then ' > ' )
+=-<> jobPost.objects.filter(title__exact = 'Django devloper') ---->(equal)
 
 8. Update the data :
 
